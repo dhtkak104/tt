@@ -52,14 +52,15 @@ export default function RecipeDetail(props) {
                         <td className={"text-center"}>{detail.info3}</td>
                     </tr>
                     <tr>
+                        <ul>
+                            {data}
+                        </ul>
                         <td colSpan={"3"}>
                             <table className={"table"}>
+                                <tr>
 
+                                </tr>
                             </table>
-                            <h3>요리방법</h3>
-                            <ul>
-                                {data}
-                            </ul>
                         </td>
                     </tr>
                 </tbody>
