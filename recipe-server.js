@@ -56,7 +56,7 @@ app.get('/recipe_detail', (request, response)=>{
     var url="mongodb://211.238.142.181:27017";
     Client.connect(url,(err,client)=>{
         var db=client.db("mydb");
-        db.collection("recipe_detail").find({no:no}).skip(skip).limit(rowSize).
+        db.collection("recipe_detail").find({no:Number(no)}).skip(skip).limit(rowSize).
         toArray(function(err,docs){
             response.json(docs)
             client.close();
