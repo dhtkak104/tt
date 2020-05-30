@@ -50,3 +50,16 @@ app.get('/recipe_total', (request, response)=>{
         })
     })
 })
+
+app.get('/recipe_detail', (request, response)=>{
+    var no = request.query.no;
+    var url="mongodb://211.238.142.181:27017";
+    Client.connect(url,(err,client)=>{
+        var db=client.db("mydb");
+        db.collection("recipe_detail").find({no:no}).skip(skip).limit(rowSize).
+        toArray(function(err,docs){
+            response.json(docs)
+            client.close();
+        })
+    })
+})
