@@ -39,7 +39,7 @@ app.get('/recipe', (request, response)=>{
     })
 })
 
-app.get('/recipe_total', (request, response)=>{
+app.get('/recipe_total', (request, response)=>{recipe_detail
     var url="mongodb://211.238.142.181:27017";
     Client.connect(url,(err,client)=>{
         var db=client.db("mydb");
@@ -56,9 +56,9 @@ app.get('/recipe_detail', (request, response)=>{
     var url="mongodb://211.238.142.181:27017";
     Client.connect(url,(err,client)=>{
         var db=client.db("mydb");
-        db.collection("recipe_detail").find({no:Number(no)}).skip(skip).limit(rowSize).
+        db.collection("recipe_detail").find({no:Number(no)}).
         toArray(function(err,docs){
-            response.json(docs)
+            response.json(docs[0])
             client.close();
         })
     })

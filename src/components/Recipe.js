@@ -7,6 +7,7 @@ export default function Recipe() {
     const [page, setPage] = useState(1);
     const [total, setTotal] = useState(0);
 
+    /* 비동기
     useEffect(async ()=>{
         // 서버를 연결해서 데이터를 읽어온 후 => setRecipe에 저장
         await axios.get('http://localhost:3355/recipe',{
@@ -17,9 +18,20 @@ export default function Recipe() {
             setRecipe(result.data);
         })
     },[])
+    */
+    useEffect( ()=>{
+        // 서버를 연결해서 데이터를 읽어온 후 => setRecipe에 저장
+        axios.get('http://localhost:3355/recipe',{
+            params:{
+                page:page
+            }
+        }).then((result)=>{
+            setRecipe(result.data);
+        })
+    },[])
 
-    useEffect(async()=>{
-        await axios.get('http://localhost:3355/recipe_total')
+    useEffect(()=>{
+        axios.get('http://localhost:3355/recipe_total')
         .then((result)=>{
             setTotal(result.data.total);
         })
