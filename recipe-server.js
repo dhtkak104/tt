@@ -63,4 +63,3 @@ app.get('/recipe_detail', (request, response)=>{
         })
     })
 })
-d
