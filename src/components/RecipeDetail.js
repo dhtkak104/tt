@@ -53,6 +53,9 @@ export default function RecipeDetail(props) {
                     </tr>
                     <tr>
                         <td colSpan={"3"}>
+                            <table className={"table"}>
+
+                            </table>
                             <h3>요리방법</h3>
                             <ul>
                                 {data}
