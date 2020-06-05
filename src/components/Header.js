@@ -1,7 +1,14 @@
+
 import React from "react";
 import {NavLink} from "react-router-dom";
 
+// render()
 export default function Header() {
+    /*
+         to={"/"}
+         http://localhost:3000/
+         http://localhost:3000/recipe
+     */
     return (
         <nav className="navbar navbar-inverse">
             <div className="container-fluid">
